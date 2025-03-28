@@ -194,7 +194,6 @@ HAVING COUNT(Ar.ArtworkID) > 2
 ORDER BY Artwork_Count DESC;
 
 --Task 6 Find the titles of artworks that were exhibited in both 'Modern Art Masterpieces' and 'Renaissance Art' exhibitions
-
 SELECT A.Title
 FROM Artworks A
 JOIN ExhibitionArtworks EA1 ON A.ArtworkID = EA1.ArtworkID
@@ -238,12 +237,6 @@ JOIN ExhibitionArtworks EA ON E.ExhibitionID = EA.ExhibitionID
 JOIN Artworks A ON EA.ArtworkID = A.ArtworkID
 JOIN Artists Ar ON A.ArtistID = Ar.ArtistID
 WHERE Ar.Name = 'Leonardo da Vinci';
-
---Task 10 Find all the artworks that have not been included in any exhibition
-SELECT A.Title
-FROM Artworks A
-LEFT JOIN ExhibitionArtworks EA ON A.ArtworkID = EA.ArtworkID
-WHERE EA.ExhibitionID IS NULL;
 
 --Task 11 Find all the artworks that have not been included in any exhibition
 SELECT A.Title
